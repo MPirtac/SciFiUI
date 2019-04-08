@@ -7,9 +7,10 @@ import processing.core.PApplet;
 public class UI extends PApplet
 {
     ArrayList<Circle> c = new ArrayList<Circle>();
+    ArrayList<BarChart> r = new ArrayList<BarChart>();
 
-    Button b;
-    MovingCircle mc;
+    //Button b;
+    //MovingCircle mc;
     //Circle a;
     // x + something will move to right  | width 
     // x - something will move to left 
@@ -52,21 +53,30 @@ public class UI extends PApplet
             Circle circle = new Circle(520+(i*70), height - 50, 50,text, 1, this);
             c.add(circle);
         }
+
+        for(int j = 0; j < 6; j++)
+        {
+            float height = (float)random(-100); 
+            BarChart barChart = new BarChart((width - 1000) +(j*25), 690, 20, height, j+1, this);
+            r.add(barChart);
+        }
     }
 
     public void draw()
     {
-        background(0, 100);
+        background(0);
         //b.render();
-
         //mc.update();
         //mc.render();
         for(Circle circle: c)
         {
             circle.render();
         }
-        //r.render();
-        //a.render();
+        
+        for(BarChart barChart: r)
+        {
+            barChart.render();
+        }
 
         // if (checkKey(LEFT))
         // {
