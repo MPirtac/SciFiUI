@@ -9,13 +9,14 @@ public class UI extends PApplet
     ArrayList<Circle> c = new ArrayList<Circle>();
     ArrayList<BarChart> r = new ArrayList<BarChart>();
     //ArrayList<Triangles> t = new ArrayList<Triangles>();
-    Triangles a1;
-    Triangles a2;
-    Triangles a3;
-    Triangles a4;
-    Triangles a5;
-    Triangles a6;
-    Triangles a7;
+    ArrayList<Triangles> a = new ArrayList<Triangles>();
+    // Triangles a1;
+    // Triangles a2;
+    // Triangles a3;
+    // Triangles a4;
+    // Triangles a5;
+    // Triangles a6;
+    // Triangles a7;
 
 
     //Button b;
@@ -70,11 +71,17 @@ public class UI extends PApplet
             r.add(barChart);
         }
 
-        a1 = new Triangles(200, 690, 240, 690, 220, 675, this);
-        a2 = new Triangles(180, 690, 245, 690, 217, 655, this);
-        a3 = new Triangles(160, 690, 250, 690, 214, 635, this);
-        a4 = new Triangles(140, 690, 255, 690, 211, 615, this);
-        a5 = new Triangles(120, 690, 260, 690, 208, 595, this);
+        for(int i = 0; i < 5; i++)
+        {
+            Triangles trig = new Triangles(200 - (i*20), 690, 240+(i*5), 690, 220-(i*3), 675-(i*20), this);
+            a.add(trig);
+        }
+
+        // a1 = new Triangles(200, 690, 240, 690, 220, 675, this);
+        // a2 = new Triangles(180, 690, 245, 690, 217, 655, this);
+        // a3 = new Triangles(160, 690, 250, 690, 214, 635, this);
+        // a4 = new Triangles(140, 690, 255, 690, 211, 615, this);
+        // a5 = new Triangles(120, 690, 260, 690, 208, 595, this);
         //a6 = new Triangles(150, 690, 258, 690, 225, 625, this);
         //a7 = new Triangles(140, 690, 262, 690, 226, 615, this);
     }
@@ -95,11 +102,16 @@ public class UI extends PApplet
             barChart.render();
         }
 
-        a5.render();
-        a4.render();
-        a3.render();
-        a2.render();
-        a1.render();
+        for(Triangles trig: a)
+        {
+            trig.render();
+        }
+
+        // a5.render();
+        // a4.render();
+        // a3.render();
+        // a2.render();
+        // a1.render();
 
         // if (checkKey(LEFT))
         // {

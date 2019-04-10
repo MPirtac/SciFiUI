@@ -25,8 +25,9 @@ public class Triangles
 
     public void render()
     {
-        ui.stroke(0);
-        ui.fill(200,255,200);
+        ui.stroke(255);
+        //ui.fill(200,255,200);
+        ui.noFill();
         ui.triangle(x1,y1,x2,y2,x3,y3);
     }
 }

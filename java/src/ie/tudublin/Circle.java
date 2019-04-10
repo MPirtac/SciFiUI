@@ -26,7 +26,7 @@ public class Circle extends UIElement {
         ui.arc(0,0,size+20, size+20, 0, ui.PI);
         ui.fill(200, 255, 200);
         ui.arc(0,0,size+20, size+20, ui.PI, ui.PI * 2);
-        ui.popMatrix();
+        ui.popMatrix(); System.out.println();
         rotation += 0.05f;
         //for the circle 
         ui.stroke(0);
