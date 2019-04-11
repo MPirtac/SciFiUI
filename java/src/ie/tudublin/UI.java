@@ -10,6 +10,10 @@ public class UI extends PApplet
     ArrayList<BarChart> r = new ArrayList<BarChart>();
     //ArrayList<Triangles> t = new ArrayList<Triangles>();
     ArrayList<Triangles> a = new ArrayList<Triangles>();
+    ArrayList<Ovals> o = new ArrayList<Ovals>();
+
+    Ovals o1;
+
     // Triangles a1;
     // Triangles a2;
     // Triangles a3;
@@ -44,12 +48,12 @@ public class UI extends PApplet
     //     return keys[c] || keys [Character.toUpperCase(c)];
     // }
     
-
     public void settings()
     {
         //size(800, 800);
         // Use fullscreen instead of size to make your interface fullscreen
         fullScreen(); 
+        //println(dist(10, 10, 11, 11));
     }
 
     public void setup()
@@ -73,17 +77,18 @@ public class UI extends PApplet
 
         for(int i = 0; i < 5; i++)
         {
-            Triangles trig = new Triangles(200 - (i*20), 690, 240+(i*5), 690, 220-(i*3), 675-(i*20), this);
+            Triangles trig = new Triangles(200 - (i*20), 690, 240+(i*5), 690, 220-(i*3), 675-(i*20), 255, 255, 255,this);
             a.add(trig);
         }
 
-        // a1 = new Triangles(200, 690, 240, 690, 220, 675, this);
-        // a2 = new Triangles(180, 690, 245, 690, 217, 655, this);
-        // a3 = new Triangles(160, 690, 250, 690, 214, 635, this);
-        // a4 = new Triangles(140, 690, 255, 690, 211, 615, this);
-        // a5 = new Triangles(120, 690, 260, 690, 208, 595, this);
-        //a6 = new Triangles(150, 690, 258, 690, 225, 625, this);
-        //a7 = new Triangles(140, 690, 262, 690, 226, 615, this);
+
+        //o1 = new Ovals(width - 100, height - 20, 130, 15, this);
+        for(int i=0; i<7; i++)
+        {
+            float gap = 12.3f;
+            Ovals oval = new Ovals(width - 100, height - 20 - (i*gap), 120 , 20, this);
+            o.add(oval);
+        }
     }
 
     public void draw()
@@ -106,6 +111,13 @@ public class UI extends PApplet
         {
             trig.render();
         }
+
+        for(Ovals oval: o)
+        {
+            oval.render();
+        }
+
+        //o1.render();
 
         // a5.render();
         // a4.render();
