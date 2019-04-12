@@ -86,8 +86,17 @@ public class UI extends PApplet
         for(int i=0; i<7; i++)
         {
             float gap = 12.3f;
-            Ovals oval = new Ovals(width - 100, height - 20 - (i*gap), 120 , 20, this);
-            o.add(oval);
+            if(i % 2 == 0)
+            {
+                Ovals oval = new Ovals(width - 100, height - 20 - (i*gap), 120 , 20, 0, 127,160, this);
+                o.add(oval);
+            }
+            else
+            {
+                Ovals oval = new Ovals(width - 100, height - 20 - (i*gap), 120 , 20, 66,244,104 , this);
+                o.add(oval);
+
+            }
         }
     }
 
