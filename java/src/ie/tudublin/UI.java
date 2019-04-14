@@ -11,9 +11,7 @@ public class UI extends PApplet
     //ArrayList<Triangles> t = new ArrayList<Triangles>();
     ArrayList<Triangles> a = new ArrayList<Triangles>();
     ArrayList<Ovals> o = new ArrayList<Ovals>();
-
-    Ovals o1;
-
+    ArrayList<PieChart> p = new ArrayList<PieChart>();
     // Triangles a1;
     // Triangles a2;
     // Triangles a3;
@@ -88,7 +86,7 @@ public class UI extends PApplet
             float gap = 12.3f;
             if(i % 2 == 0)
             {
-                Ovals oval = new Ovals(width - 100, height - 20 - (i*gap), 120 , 20, 0, 127,160, this);
+                Ovals oval = new Ovals(width - 100, height - 20 - (i*gap), 120 , 20, 0, 127,160 , this);
                 o.add(oval);
             }
             else
@@ -98,6 +96,13 @@ public class UI extends PApplet
 
             }
         }
+
+        PieChart piece1 = new PieChart(width - 400 + 2, height - 70 + 2, 90, 0, radians(100), 255, 102, 255,this);
+        p.add(piece1);
+        PieChart piece2 = new PieChart(width - 400 - 2, height - 70, 90, radians(120), radians(220), 178,102,255,this);
+        p.add(piece2);
+        PieChart piece3 = new PieChart(width- 400 + 1, height - 70 -3, 90, radians(240), radians(340), 102,255,178,this);
+        p.add(piece3);
     }
 
     public void draw()
@@ -126,6 +131,11 @@ public class UI extends PApplet
             oval.render();
         }
 
+        for(PieChart pieces: p)
+        {
+            pieces.render();
+        }
+
         //o1.render();
 
         // a5.render();
@@ -139,5 +149,6 @@ public class UI extends PApplet
         //     System.out.println("Left arrow key pressed");
         // }
     }
+
 }
 

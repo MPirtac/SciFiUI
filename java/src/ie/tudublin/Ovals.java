@@ -8,7 +8,7 @@ public class Ovals extends PApplet
     private float y;
     private float w;
     private float h;
-    private float colour;
+    //private float colour;
     private float r,g,b;
     PApplet ui;
     
