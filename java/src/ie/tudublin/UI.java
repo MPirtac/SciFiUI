@@ -3,6 +3,7 @@ package ie.tudublin;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class UI extends PApplet
 {
@@ -12,6 +13,11 @@ public class UI extends PApplet
     ArrayList<Triangles> a = new ArrayList<Triangles>();
     ArrayList<Ovals> o = new ArrayList<Ovals>();
     ArrayList<PieChart> p = new ArrayList<PieChart>();
+
+    //Body Image
+    PImage img;
+
+
     // Triangles a1;
     // Triangles a2;
     // Triangles a3;
@@ -19,8 +25,6 @@ public class UI extends PApplet
     // Triangles a5;
     // Triangles a6;
     // Triangles a7;
-
-
     //Button b;
     //MovingCircle mc;
     //Circle a;
@@ -103,11 +107,16 @@ public class UI extends PApplet
         p.add(piece2);
         PieChart piece3 = new PieChart(width- 400 + 1, height - 70 -3, 90, radians(240), radians(340), 102,255,178,this);
         p.add(piece3);
+
+        //Body Image
+        img = loadImage("b1.jpg");
     }
 
     public void draw()
     {
         background(0);
+        image(img,width/3,height/10, 360,500);
+        //image(img,mouseX,mouseY, 360,500);
         //b.render();
         //mc.update();
         //mc.render();
@@ -135,6 +144,8 @@ public class UI extends PApplet
         {
             pieces.render();
         }
+
+
 
         //o1.render();
 
