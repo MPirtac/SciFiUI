@@ -13,9 +13,12 @@ public class UI extends PApplet
     ArrayList<Triangles> a = new ArrayList<Triangles>();
     ArrayList<Ovals> o = new ArrayList<Ovals>();
     ArrayList<PieChart> p = new ArrayList<PieChart>();
-
     //Body Image
     PImage img;
+
+    //ArtificialID d;
+    ArrayList<ArtificialID> circles;
+
 
 
     // Triangles a1;
@@ -110,6 +113,10 @@ public class UI extends PApplet
 
         //Body Image
         img = loadImage("b1.jpg");
+
+        //d = new ArtificialID(200, 200, 50, this);
+        circles = new ArrayList<ArtificialID>();
+        //circles.add(new ArtificialID(200, 200, 50, this));
     }
 
     public void draw()
@@ -146,6 +153,37 @@ public class UI extends PApplet
         }
 
 
+        //d.render();
+        // float x = random(width);
+        // float y = random(height);
+        // circles.add(new ArtificialID(x, y, 1, this));
+        ArtificialID newC =  newArtificialID();
+        if(c!= null)
+        {
+            circles.add(newC);
+        }
+        for(ArtificialID c: circles)
+        {
+            if(c.growing)
+            {
+                if(c.edges())
+                {
+                    c.growing = false;
+                }else {
+                    for(ArtificialID other : circles)
+                    {
+                        float d = dist(c.x, c.y, other.x, other.y);
+                        if(d<c.r + other.r){
+                            c.growing = false;
+                            break;
+                        }
+
+                    }
+                }
+            }
+            c.render();
+            c.grow();
+        }
 
         //o1.render();
 
@@ -161,5 +199,32 @@ public class UI extends PApplet
         // }
     }
 
+    public ArtificialID newArtificialID()
+    {
+        float x = random(width);
+        float y = random(height);
+
+        boolean valid = true;
+        for(ArtificialID c: circles)
+        {
+            float d = dist(x,y,c.x,c.y);
+            if(d<c.r)
+            {
+                valid = false;
+                break;
+            }  
+        }
+        if(valid = true)
+        {
+            return new ArtificialID(x, y, this);
+        } else {
+            return null;
+        }
+
+        //circles.add(new ArtificialID(x, y, 1, this));
+        }
+
 }
+
+
 
