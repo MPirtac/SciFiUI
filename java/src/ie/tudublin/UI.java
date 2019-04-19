@@ -17,7 +17,8 @@ public class UI extends PApplet
     PImage img;
 
     //ArtificialID d;
-    ArrayList<ArtificialID> circles;
+    ArrayList<ArtificialID> id = new ArrayList<ArtificialID>();
+
 
 
 
@@ -113,10 +114,27 @@ public class UI extends PApplet
 
         //Body Image
         img = loadImage("b1.jpg");
+        
+        //Artificial ID
+        frameRate(15);
+        int nr_circles = 32;
+        float lg_diam = (float) (width * 0.07);
+        float lg_rad = lg_diam / 2;
+        float lg_circ = PI * lg_diam;
+        float sm_diam = (lg_circ / nr_circles);
+        float cx = (float) (width/21);
+        float cy = (float) (height/1.13);
 
-        //d = new ArtificialID(200, 200, 50, this);
-        circles = new ArrayList<ArtificialID>();
-        //circles.add(new ArtificialID(200, 200, 50, this));
+        for(int i = 1; i<nr_circles; i++)
+        {
+            float angle = i * TWO_PI / nr_circles;
+            float x = cx + cos(angle) * lg_rad;
+            float y = cy + sin(angle) * lg_rad;
+            ArtificialID c1 = new ArtificialID(x,y, sm_diam, this);
+            id.add(c1);
+        }
+
+
     }
 
     public void draw()
@@ -152,38 +170,15 @@ public class UI extends PApplet
             pieces.render();
         }
 
+        for(ArtificialID c1: id)
+        {
+            c1.render();
+        }
 
         //d.render();
         // float x = random(width);
         // float y = random(height);
-        // circles.add(new ArtificialID(x, y, 1, this));
-        ArtificialID newC =  newArtificialID();
-        if(c!= null)
-        {
-            circles.add(newC);
-        }
-        for(ArtificialID c: circles)
-        {
-            if(c.growing)
-            {
-                if(c.edges())
-                {
-                    c.growing = false;
-                }else {
-                    for(ArtificialID other : circles)
-                    {
-                        float d = dist(c.x, c.y, other.x, other.y);
-                        if(d<c.r + other.r){
-                            c.growing = false;
-                            break;
-                        }
-
-                    }
-                }
-            }
-            c.render();
-            c.grow();
-        }
+     
 
         //o1.render();
 
@@ -199,30 +194,7 @@ public class UI extends PApplet
         // }
     }
 
-    public ArtificialID newArtificialID()
-    {
-        float x = random(width);
-        float y = random(height);
-
-        boolean valid = true;
-        for(ArtificialID c: circles)
-        {
-            float d = dist(x,y,c.x,c.y);
-            if(d<c.r)
-            {
-                valid = false;
-                break;
-            }  
-        }
-        if(valid = true)
-        {
-            return new ArtificialID(x, y, this);
-        } else {
-            return null;
-        }
-
-        //circles.add(new ArtificialID(x, y, 1, this));
-        }
+   
 
 }
 

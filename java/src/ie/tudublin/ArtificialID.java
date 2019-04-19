@@ -4,36 +4,22 @@ import processing.core.PApplet;
 
 public class ArtificialID extends UIElement 
 {
-    public float r;
-    boolean growing = true;
+    private float r;
 
-    public ArtificialID(float x, float y, PApplet ui)
+    public ArtificialID(float x, float y, float r, PApplet ui)
     {
         super(x, y, ui);
-        r = 5;  
-    }
-
-    void grow()
-    {
-        if(growing)
-        {
-            r = r + 1;
-        }
-    }
-
-    boolean edges()
-    {
-        return (x + r > ui.width || x - r < 0 || y + r > ui.height || y - r < 0);
-
+        this.r = r;
     }
 
     public void render()
     {
-        ui.stroke(255);
-        //ui.strokeWeight(4);
-        ui.noFill();
-        ui.ellipse(x,y,r*2,r*2);
-        ui.strokeWeight(1);
+        ui.fill(25,25,112);
+        ui.ellipse(x,y,r,r);
+        ui.fill(255,0,0);
+        ui.ellipse(x-5,y+5,r/2,r/2); 
+        //ui.textAlign(PApplet.CENTER, PApplet.CENTER);
+        //ui.text("ArtificialID", x, y, 10);   
     }
 
 
