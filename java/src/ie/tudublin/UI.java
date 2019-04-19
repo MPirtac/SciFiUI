@@ -115,26 +115,15 @@ public class UI extends PApplet
         //Body Image
         img = loadImage("b1.jpg");
         
-        //Artificial ID
-        frameRate(15);
-        int nr_circles = 32;
-        float lg_diam = (float) (width * 0.07);
-        float lg_rad = lg_diam / 2;
-        float lg_circ = PI * lg_diam;
-        float sm_diam = (lg_circ / nr_circles);
-        float cx = (float) (width/21);
-        float cy = (float) (height/1.13);
-
-        for(int i = 1; i<nr_circles; i++)
-        {
-            float angle = i * TWO_PI / nr_circles;
-            float x = cx + cos(angle) * lg_rad;
-            float y = cy + sin(angle) * lg_rad;
-            ArtificialID c1 = new ArtificialID(x,y, sm_diam, this);
+        //Artificial ID 
+        float x=0;
+        while(x<360)
+       {
+            ArtificialID c1 = new ArtificialID(sin(radians(x)),cos(radians(x)), this);
             id.add(c1);
-        }
-
-
+            x+=10;
+       }
+       
     }
 
     public void draw()
