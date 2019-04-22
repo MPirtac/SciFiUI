@@ -8,7 +8,6 @@ public class ArtificialID extends UIElement
     public ArtificialID(float x, float y, PApplet ui)
     {
         super(x, y, ui);
-        //this.r = r;
     }
 
     public void render()
