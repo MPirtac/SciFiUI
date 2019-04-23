@@ -126,7 +126,7 @@ public class UI extends PApplet
        }
 
        //Graph
-        outline = new Graph(width-350, height/30, 320, 150, this);
+        outline = new Graph(width-350, height/10,200, this);
         // for(int i=4; i<=12; i++)
         // {
         //     float coord = map(i, 4, 12, outline,);
@@ -175,8 +175,8 @@ public class UI extends PApplet
             c1.render();
         }
 
-        
         outline.render();
+        // outline.gridLines();
         //d.render();
         // float x = random(width);
         // float y = random(height);
