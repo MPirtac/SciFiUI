@@ -18,9 +18,8 @@ public class UI extends PApplet
 
     //ArtificialID d;
     ArrayList<ArtificialID> id = new ArrayList<ArtificialID>();
-    ArrayList<Graph> g = new ArrayList<Graph>();
-
-    Graph outline;
+    // ArrayList<Graph> g = new ArrayList<Graph>();
+    Graph g;
 
 
     // Triangles a1;
@@ -126,7 +125,7 @@ public class UI extends PApplet
        }
 
        //Graph
-        outline = new Graph(width-350, height/10,200, this);
+        g = new Graph(width-350, height/10,200, this);
         // for(int i=4; i<=12; i++)
         // {
         //     float coord = map(i, 4, 12, outline,);
@@ -175,7 +174,7 @@ public class UI extends PApplet
             c1.render();
         }
 
-        outline.render();
+        g.render();
         // outline.gridLines();
         //d.render();
         // float x = random(width);
