@@ -175,6 +175,8 @@ public class UI extends PApplet
         }
 
         g.render();
+
+        //println(mouseX,mouseY);
         // outline.gridLines();
         //d.render();
         // float x = random(width);
