@@ -18,6 +18,8 @@ public class UI extends PApplet
     ArrayList<CoBodyPart> part = new ArrayList<CoBodyPart>();
     //Body Image
     PImage img;
+    //Parts of the body Images 
+    PImage p1,p2,p3,p4,p5;
 
     //ArtificialID d;
     ArrayList<ArtificialID> id = new ArrayList<ArtificialID>();
@@ -117,6 +119,13 @@ public class UI extends PApplet
 
         //Body Image
         img = loadImage("b1.jpg");
+        //Images for body parts
+        p1 = loadImage("heart.jpg");
+        p2 = loadImage("stomach.jpg");
+        p3 = loadImage("liver.jpg");
+        p4 = loadImage("leftkidney.jpg");
+        p5 = loadImage("rightkidney.jpg");
+
         
         //Artificial ID 
         float x=0;
