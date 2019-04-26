@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import processing.core.PApplet;
 import processing.core.PImage;
+import processing.data.Table;
+import processing.data.TableRow;
 
 public class UI extends PApplet
 {
@@ -13,6 +15,7 @@ public class UI extends PApplet
     ArrayList<Triangles> a = new ArrayList<Triangles>();
     ArrayList<Ovals> o = new ArrayList<Ovals>();
     ArrayList<PieChart> p = new ArrayList<PieChart>();
+    ArrayList<CoBodyPart> part = new ArrayList<CoBodyPart>();
     //Body Image
     PImage img;
 
@@ -126,6 +129,9 @@ public class UI extends PApplet
 
        //Graph
         g = new Graph(width-350, height/10,200, this);
+
+
+        loadData();
         // for(int i=4; i<=12; i++)
         // {
         //     float coord = map(i, 4, 12, outline,);
@@ -176,6 +182,10 @@ public class UI extends PApplet
 
         g.render();
 
+        //print data
+        printData();
+
+
         //println(mouseX,mouseY);
         // outline.gridLines();
         //d.render();
@@ -197,7 +207,23 @@ public class UI extends PApplet
         // }
     }
 
-   
+    public void loadData()
+    {
+        Table table = loadTable("organs.csv", "header");
+        for(TableRow row: table.rows())
+        {
+            CoBodyPart fragment = new CoBodyPart(row);
+            part.add(fragment);
+        }
+    }
+
+    public void printData()
+    {
+        for(CoBodyPart p: part)
+        System.out.println(p);
+    }
+
+
 
 }
 
