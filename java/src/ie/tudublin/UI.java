@@ -176,7 +176,17 @@ public class UI extends PApplet
         g.render();
 
         //print data
-        printData();
+        //printData();
+
+        for(int i =0; i<part.size(); i++)
+        {
+            part.get(i).hoverover(mouseX,mouseY);
+        }
+
+        for(int i = 0; i < part.size(); i++)
+        {
+            drawData();
+        }
 
 
         //println(mouseX,mouseY);
@@ -200,6 +210,7 @@ public class UI extends PApplet
         // }
     }
 
+    //Load Coordinates from the csv file 
     public void loadData()
     {
         Table table = loadTable("organs.csv", "header");
@@ -210,13 +221,32 @@ public class UI extends PApplet
         }
     }
 
-    public void printData()
+    // public void printData()
+    // {
+    //     for(CoBodyPart p: part)
+    //     System.out.println(p);
+    // }
+    
+     //DrawData
+     public void drawData()
     {
-        for(CoBodyPart p: part)
-        System.out.println(p);
+        for(CoBodyPart fragment : part)
+        {
+            noStroke();
+            noFill();
+            ellipse(fragment.getCoordX(), fragment.getCoordY(), 20,20);
+            if(fragment.hover)
+            {
+                stroke(255);
+                ellipse(fragment.getCoordX()-200, fragment.getCoordY(), 130, 130);
+                fill(255);
+                textAlign(CENTER);
+                text(fragment.getName(),fragment.getCoordX()-200, fragment.getCoordY());
+            }
+            noFill();
+            noStroke();
+        }
     }
-
-
 
 }
 
