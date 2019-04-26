@@ -25,6 +25,17 @@ public class CoBodyPart extends PApplet
         return CoordX + "\t" + CoordY + "\t" + Name;
 
     }
+
+    public void hoverover(float cx, float cy)
+    {
+        float d = ui.dist(cx,cy,CoordX,CoordY);
+        if(d< 10/2)
+        {
+            hover = true;
+        }else{
+            hover = false;
+        }
+    }
     
     /**
      * @return the coordX

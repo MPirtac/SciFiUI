@@ -130,16 +130,9 @@ public class UI extends PApplet
        //Graph
         g = new Graph(width-350, height/10,200, this);
 
-
+        //Load the coordinates of each body part
         loadData();
-        // for(int i=4; i<=12; i++)
-        // {
-        //     float coord = map(i, 4, 12, outline,);
-        //     Graph g1 = new Graph(coord, outline, coord, width-outline, this);
-        //     g.add(g1);
-        //     Graph g2 = new Graph(outline, coord, width, coord, this);
-        //     g.add(g2);
-        //}
+
     }
 
     public void draw()
