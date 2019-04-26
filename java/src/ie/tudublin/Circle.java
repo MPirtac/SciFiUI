@@ -39,5 +39,4 @@ public class Circle extends UIElement {
         ui.text(text + "%", x, y);          
     }
 
-
 }

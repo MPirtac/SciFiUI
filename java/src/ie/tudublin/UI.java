@@ -26,6 +26,7 @@ public class UI extends PApplet
     // ArrayList<Graph> g = new ArrayList<Graph>();
     Graph g;
 
+    BodyBackground framework;
 
     // Triangles a1;
     // Triangles a2;
@@ -142,6 +143,10 @@ public class UI extends PApplet
         //Load the coordinates of each body part
         loadData();
 
+        //Body Background
+        //framework = new BodyBackground(450, 280, this);
+        framework = new BodyBackground(598, 320, this);
+
     }
 
     public void draw()
@@ -197,8 +202,10 @@ public class UI extends PApplet
             drawData();
         }
 
+        //Body Background
+        framework.render();
 
-        //println(mouseX,mouseY);
+        println(mouseX,mouseY);
         // outline.gridLines();
         //d.render();
         // float x = random(width);
