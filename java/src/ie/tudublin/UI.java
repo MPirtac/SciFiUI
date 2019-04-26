@@ -246,14 +246,40 @@ public class UI extends PApplet
             ellipse(fragment.getCoordX(), fragment.getCoordY(), 20,20);
             if(fragment.hover)
             {
-                stroke(255);
-                ellipse(fragment.getCoordX()-200, fragment.getCoordY(), 130, 130);
+                strokeWeight(4);
+                stroke(0,255,0);
+                rect(fragment.getCoordX()-250, fragment.getCoordY()-50,106,106,10);
+                if(fragment.getCoordX() == 612)
+                {
+                    tint(255, 0, 0, 100);
+                    image(p1,fragment.getCoordX()-247, fragment.getCoordY()-46, 100, 100);
+                }else if(fragment.getCoordX() == 614)
+                {
+                    tint(0, 0, 255, 100);
+                    image(p2,fragment.getCoordX()-247, fragment.getCoordY()-46, 100, 100);    
+                }else if(fragment.getCoordX() == 617)
+                {
+                    tint(255, 0, 0, 100);
+                    image(p5,fragment.getCoordX()-247, fragment.getCoordY()-46, 100, 100);
+                }else if(fragment.getCoordX() == 581)
+                {
+                    tint(0, 0, 255, 100);
+                    image(p3,fragment.getCoordX()-247, fragment.getCoordY()-46, 100, 100);
+                }
+                else if(fragment.getCoordX() == 587)
+                {
+                    tint(0, 0, 255, 100);
+                    image(p4,fragment.getCoordX()-247, fragment.getCoordY()-46, 100, 100);
+                }
+
                 fill(255);
                 textAlign(CENTER);
                 text(fragment.getName(),fragment.getCoordX()-200, fragment.getCoordY());
             }
             noFill();
             noStroke();
+            noTint();
+            strokeWeight(1);
         }
     }
 
