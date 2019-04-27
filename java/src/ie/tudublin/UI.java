@@ -2,6 +2,8 @@ package ie.tudublin;
 
 import java.util.ArrayList;
 
+import ddf.minim.AudioPlayer;
+import ddf.minim.Minim;
 import processing.core.PApplet;
 import processing.core.PImage;
 import processing.data.Table;
@@ -35,6 +37,9 @@ public class UI extends PApplet {
     float t = 1.0f;
     float step = 1;
 
+    // heart beat
+    AudioPlayer heartbeat;
+    Minim minim;
 
     // Triangles a1;
     // Triangles a2;
@@ -155,6 +160,10 @@ public class UI extends PApplet {
         //framework = new BodyBackground(450, 280, this);
         framework = new BodyBackground(598, 320, PI + 1.2f, PI/6, PI + 1.6f, PI/4, PI + 0.7f, PI/8, this);
 
+        //heart beat
+        minim = new Minim(this);
+        heartbeat = minim.loadFile("heartbeat.mp3");
+        heartbeat.play();
     
     }
 
