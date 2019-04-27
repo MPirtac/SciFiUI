@@ -145,7 +145,7 @@ public class UI extends PApplet
 
         //Body Background
         //framework = new BodyBackground(450, 280, this);
-        framework = new BodyBackground(598, 320, this);
+        framework = new BodyBackground(598, 320, PI + 1.2f, PI/6, PI + 1.6f, PI/4, PI + 0.7f, PI/8, this);
 
     }
 
@@ -254,7 +254,7 @@ public class UI extends PApplet
             if(fragment.hover)
             {
                 strokeWeight(4);
-                stroke(0,255,0);
+                stroke(77, 255, 166);
                 rect(fragment.getCoordX()-250, fragment.getCoordY()-50,106,106,10);
                 if(fragment.getCoordX() == 612)
                 {
