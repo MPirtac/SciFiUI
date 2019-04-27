@@ -41,6 +41,10 @@ public class UI extends PApplet {
     AudioPlayer heartbeat;
     Minim minim;
 
+    //heart button
+    Button heart;
+
+
     // Triangles a1;
     // Triangles a2;
     // Triangles a3;
@@ -48,7 +52,6 @@ public class UI extends PApplet {
     // Triangles a5;
     // Triangles a6;
     // Triangles a7;
-    //Button b;
     //MovingCircle mc;
     //Circle a;
     // x + something will move to right  | width 
@@ -83,7 +86,6 @@ public class UI extends PApplet {
 
     public void setup()
     {
-        //b = new Button(this, 50, 50, 100, 50, "I am a button");
         //mc = new MovingCircle(this, width / 2, height / 2, 50);
         //a = new Circle(width/2, height - 50, 60, this);
         for(int i = 0; i < 3; i++)
@@ -163,7 +165,10 @@ public class UI extends PApplet {
         //heart beat
         minim = new Minim(this);
         heartbeat = minim.loadFile("heartbeat.mp3");
-        heartbeat.play();
+        //heartbeat.play();
+
+        //button heart
+        heart = new Button(588,183, 27,30, this);
     
     }
 
@@ -224,7 +229,8 @@ public class UI extends PApplet {
         framework.render();
         //sine wave
         waves();
-
+        //heart button
+        heart.render();
         println(mouseX,mouseY);
         // outline.gridLines();
         //d.render();
@@ -333,7 +339,14 @@ public class UI extends PApplet {
         t = t + 0.11f;  
         s4 = s4 + (s1-s4)/200;
         }
-
+    
+    public void mousePressed()
+    {
+        if(mouseX > 588 && mouseX < 615 && mouseY>183 && mouseY<213)
+        {
+            heartbeat.play();
+        }
+    }
 
 }
 
