@@ -7,34 +7,34 @@ import processing.core.PImage;
 import processing.data.Table;
 import processing.data.TableRow;
 
-public class UI extends PApplet
-{
+public class UI extends PApplet {
     ArrayList<Circle> c = new ArrayList<Circle>();
     ArrayList<BarChart> r = new ArrayList<BarChart>();
-    //ArrayList<Triangles> t = new ArrayList<Triangles>();
+    // ArrayList<Triangles> t = new ArrayList<Triangles>();
     ArrayList<Triangles> a = new ArrayList<Triangles>();
     ArrayList<Ovals> o = new ArrayList<Ovals>();
     ArrayList<PieChart> p = new ArrayList<PieChart>();
     ArrayList<CoBodyPart> part = new ArrayList<CoBodyPart>();
-    //Body Image
+    // Body Image
     PImage img;
-    //Parts of the body Images 
-    PImage p1,p2,p3,p4,p5;
+    // Parts of the body Images
+    PImage p1, p2, p3, p4, p5;
 
-    //ArtificialID d;
+    // ArtificialID d;
     ArrayList<ArtificialID> id = new ArrayList<ArtificialID>();
     // ArrayList<Graph> g = new ArrayList<Graph>();
     Graph g;
 
     BodyBackground framework;
 
-    //sine wave for the heart beat 
+    // sine wave for the heart beat
     float s1 = 20.0f;
-    float s2 = 0.5f;
+    float s2 = 1f;
     float s3 = 6.0f;
     float s4 = 7.0f;
     float t = 1.0f;
     float step = 1;
+
 
     // Triangles a1;
     // Triangles a2;
@@ -155,6 +155,7 @@ public class UI extends PApplet
         //framework = new BodyBackground(450, 280, this);
         framework = new BodyBackground(598, 320, PI + 1.2f, PI/6, PI + 1.6f, PI/4, PI + 0.7f, PI/8, this);
 
+    
     }
 
     public void draw()
@@ -306,32 +307,23 @@ public class UI extends PApplet
 
     void waves()
     {
-        //background(0);
-        
-        //lerpwave(100, 40, 150, 30, wave2, wave1, X_AXIS);
-        //lerpwave(10, 40, 120, 30, wave1, wave2, X_AXIS);
-        // stroke(0,255,0);
-        // fill(0,255,0);
+    
         stroke(255);
         float coordx = 0;
-        float coordy = 60;
-        for (float x=6; x<width/5; x+=step)
+        float coordy = 113;
+        for (float x = 10; x<width/5; x+=step)
         {
             float cx = map(x, 0, 100, -6, 2);    
             float cy = wave(cx);
-            float y = map(cy, -3, 0, height/2, 60);
-            // fill(255);
-            // stroke(255);
+            float y = map(cy, -3, 1, height/2, 30);
             line(coordx, coordy, x, y);
 
             coordx = x;
             coordy = y;
         }
-        t = t + 0.3f;  
+        t = t + 0.11f;  
         s4 = s4 + (s1-s4)/200;
-
         }
-
 
 
 }
