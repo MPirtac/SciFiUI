@@ -21,7 +21,7 @@ public class Graph
     public void render()
     {  
         
-        ui.stroke(255);  
+        ui.stroke(100,100,100);  
         //The Grid
         gridLines();
 

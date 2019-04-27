@@ -28,6 +28,14 @@ public class UI extends PApplet
 
     BodyBackground framework;
 
+    //sine wave for the heart beat 
+    float s1 = 20.0f;
+    float s2 = 0.5f;
+    float s3 = 6.0f;
+    float s4 = 7.0f;
+    float t = 1.0f;
+    float step = 1;
+
     // Triangles a1;
     // Triangles a2;
     // Triangles a3;
@@ -204,6 +212,8 @@ public class UI extends PApplet
 
         //Body Background
         framework.render();
+        //sine wave
+        waves();
 
         println(mouseX,mouseY);
         // outline.gridLines();
@@ -255,28 +265,28 @@ public class UI extends PApplet
             {
                 strokeWeight(4);
                 stroke(77, 255, 166);
-                rect(fragment.getCoordX()-250, fragment.getCoordY()-50,106,106,10);
+                rect(fragment.getCoordX()-240, fragment.getCoordY()-50,106,106,10);
                 if(fragment.getCoordX() == 612)
                 {
                     tint(255, 0, 0, 100);
-                    image(p1,fragment.getCoordX()-247, fragment.getCoordY()-46, 100, 100);
+                    image(p1,fragment.getCoordX()-237, fragment.getCoordY()-46, 100, 100);
                 }else if(fragment.getCoordX() == 614)
                 {
                     tint(0, 0, 255, 100);
-                    image(p2,fragment.getCoordX()-247, fragment.getCoordY()-46, 100, 100);    
+                    image(p2,fragment.getCoordX()-237, fragment.getCoordY()-46, 100, 100);    
                 }else if(fragment.getCoordX() == 617)
                 {
                     tint(255, 0, 0, 100);
-                    image(p5,fragment.getCoordX()-247, fragment.getCoordY()-46, 100, 100);
+                    image(p5,fragment.getCoordX()-237, fragment.getCoordY()-46, 100, 100);
                 }else if(fragment.getCoordX() == 581)
                 {
                     tint(0, 0, 255, 100);
-                    image(p3,fragment.getCoordX()-247, fragment.getCoordY()-46, 100, 100);
+                    image(p3,fragment.getCoordX()-237, fragment.getCoordY()-46, 100, 100);
                 }
                 else if(fragment.getCoordX() == 587)
                 {
                     tint(0, 0, 255, 100);
-                    image(p4,fragment.getCoordX()-247, fragment.getCoordY()-46, 100, 100);
+                    image(p4,fragment.getCoordX()-237, fragment.getCoordY()-46, 100, 100);
                 }
 
                 fill(255);
@@ -289,6 +299,40 @@ public class UI extends PApplet
             strokeWeight(1);
         }
     }
+
+    float wave(float x) {
+      return s2*pow(s3/(s3+pow(x, 4)), s3)*cos(s4*x-t);
+    }
+
+    void waves()
+    {
+        //background(0);
+        
+        //lerpwave(100, 40, 150, 30, wave2, wave1, X_AXIS);
+        //lerpwave(10, 40, 120, 30, wave1, wave2, X_AXIS);
+        // stroke(0,255,0);
+        // fill(0,255,0);
+        stroke(255);
+        float coordx = 0;
+        float coordy = 60;
+        for (float x=6; x<width/5; x+=step)
+        {
+            float cx = map(x, 0, 100, -6, 2);    
+            float cy = wave(cx);
+            float y = map(cy, -3, 0, height/2, 60);
+            // fill(255);
+            // stroke(255);
+            line(coordx, coordy, x, y);
+
+            coordx = x;
+            coordy = y;
+        }
+        t = t + 0.3f;  
+        s4 = s4 + (s1-s4)/200;
+
+        }
+
+
 
 }
 
