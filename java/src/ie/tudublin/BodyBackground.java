@@ -32,29 +32,27 @@ public class BodyBackground extends UIElement
     public void render()
     {
             
-            //1st circle
-            ui.strokeWeight(2);
-            ui.stroke(179, 255, 218);
-            ui.noFill();
-            ui.ellipse(x,y, size2,size2);
-            ui.noStroke();
+            //circles
+            // ui.strokeWeight(2);
+            // ui.stroke(179, 255, 218);
+            // ui.noFill();
+            // ui.ellipse(x,y, size2,size2);
+            // ui.noStroke();
 
-            //2nd circle
-            ui.strokeWeight(2);
-            ui.stroke(102, 102, 255);
-            ui.noFill();
-            ui.ellipse(x,y,size3,size3);
+            // ui.strokeWeight(2);
+            // ui.stroke(102, 102, 255);
+            // ui.noFill();
+            // ui.ellipse(x,y,size3,size3);
 
-            //3rd circle
-            ui.strokeWeight(4);
-            ui.stroke(77, 255, 166);
-            ui.noFill();
-            ui.ellipse(x,y,size5,size5);
+            // ui.strokeWeight(4);
+            // ui.stroke(77, 255, 166);
+            // ui.noFill();
+            // ui.ellipse(x,y,size5,size5);
 
-            ui.strokeWeight(4);
-            ui.stroke(77, 255, 166);
-            ui.noFill();
-            ui.ellipse(x,y,size7,size7);
+            // ui.strokeWeight(4);
+            // ui.stroke(77, 255, 166);
+            // ui.noFill();
+            // ui.ellipse(x,y,size7,size7);
 
             //arcs
             ui.strokeWeight(5);
@@ -79,6 +77,12 @@ public class BodyBackground extends UIElement
             ui.noFill();
             ui.stroke(0);
 
+            arc1 = arc1 + 0.1f;
+            arc2 = arc2 + 0.1f;
+            arc3 = arc3 - 0.1f;
+            arc4 = arc4 - 0.1f;
+            arc5 = arc5 - 0.2f;
+            arc6 = arc6 - 0.2f;
             
     }
     
