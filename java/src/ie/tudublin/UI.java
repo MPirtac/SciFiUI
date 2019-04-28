@@ -48,6 +48,8 @@ public class UI extends PApplet {
     //heart button
     Button heart;
 
+    //Radar
+    Radar radar;
     // Random text1,text2,text3,text4,text5,text6,text7;
     // Triangles a1;
     // Triangles a2;
@@ -175,6 +177,9 @@ public class UI extends PApplet {
         //button heart
         heart = new Button(588,183, 27,30, this);
 
+        //radar
+        radar = new Radar(width-1150, 400, 200,this);
+
         //Random Text
         loadrandomInfo();
     }
@@ -242,6 +247,9 @@ public class UI extends PApplet {
         //heart button
         heart.render();
         println(mouseX,mouseY);
+        //radar
+        radar.render();
+        radar.updateRadar();
         // outline.gridLines();
         //d.render();
         // float x = random(width);
