@@ -2,6 +2,7 @@ package ie.tudublin;
 
 import java.util.ArrayList;
 
+import ddf.minim.AudioInput;
 import ddf.minim.AudioPlayer;
 import ddf.minim.Minim;
 import processing.core.PApplet;
@@ -40,7 +41,10 @@ public class UI extends PApplet {
     // heart beat
     AudioPlayer heartbeat;
     Minim minim;
-
+    public static int sample = 64100;
+    public static int resolution = 16;
+    public static int frame = 1024;
+    AudioInput ai;
     //heart button
     Button heart;
 
@@ -166,6 +170,7 @@ public class UI extends PApplet {
         minim = new Minim(this);
         heartbeat = minim.loadFile("heartbeat.mp3");
         //heartbeat.play();
+        ai = minim.getLineIn(minim.MONO, frame, sample, resolution);
 
         //button heart
         heart = new Button(588,183, 27,30, this);
@@ -250,6 +255,20 @@ public class UI extends PApplet {
         // {
         //     System.out.println("Left arrow key pressed");
         // }
+
+        // colorMode(HSB);
+        // for(int i = 0; i<ai.bufferSize(); i++)
+        // {
+        // if(click != -1)
+        // {
+        //   for(int i =0; i < songs[click].bufferSize();i++)
+        //  {
+        //      stroke(map(i,0,frame,0,255),255,255);
+        //      line(i+300,50,i,50 + ai.left.get(i)*50);
+        //  }
+        //      line(i+300,50,i,50 + songs[click].left.get(i)*50);
+        //  }
+        //  } 
     }
 
     //Load Coordinates from the csv file 
@@ -316,11 +335,11 @@ public class UI extends PApplet {
         }
     }
 
-    float wave(float x) {
+    public float wave(float x) {
       return s2*pow(s3/(s3+pow(x, 4)), s3)*cos(s4*x-t);
     }
 
-    void waves()
+    public void waves()
     {
     
         stroke(255);
@@ -348,6 +367,15 @@ public class UI extends PApplet {
         }
     }
 
+    public void keyPressed()
+    {
+        if(key == 'p' && heartbeat.isPlaying() == true)
+        {
+            heartbeat.pause();
+        }
+    }
+ 
+    
 }
 
 

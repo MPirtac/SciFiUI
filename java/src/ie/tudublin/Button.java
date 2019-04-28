@@ -20,6 +20,7 @@ public class Button extends UIElement
         ui.strokeWeight(3);
         ui.stroke(0, 0, 153,100);
         ui.rect(x, y, width, height);
+        ui.strokeWeight(1);
         
     }
 }
