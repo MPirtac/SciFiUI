@@ -17,6 +17,7 @@ public class UI extends PApplet {
     ArrayList<Ovals> o = new ArrayList<Ovals>();
     ArrayList<PieChart> p = new ArrayList<PieChart>();
     ArrayList<CoBodyPart> part = new ArrayList<CoBodyPart>();
+    ArrayList<Random> text = new ArrayList<Random>();
     // Body Image
     PImage img;
     // Parts of the body Images
@@ -47,7 +48,7 @@ public class UI extends PApplet {
     //heart button
     Button heart;
 
-
+    // Random text1,text2,text3,text4,text5,text6,text7;
     // Triangles a1;
     // Triangles a2;
     // Triangles a3;
@@ -173,7 +174,9 @@ public class UI extends PApplet {
 
         //button heart
         heart = new Button(588,183, 27,30, this);
-    
+
+        //Random Text
+        loadrandomInfo();
     }
 
     public void draw()
@@ -229,6 +232,8 @@ public class UI extends PApplet {
             drawData();
         }
 
+        drawrandomInfo();
+
         //Body Background
         framework.render();
         //sine wave
@@ -255,14 +260,16 @@ public class UI extends PApplet {
         //     System.out.println("Left arrow key pressed");
         // }
 
-
-        for(int i = 0; i<ai.bufferSize(); i++)
-        {
-            if(key != 'p')
+            for(int i = 0; i<ai.bufferSize(); i++)
             {
-                line(width,333,i,333 + heartbeat.left.get(i)*333);
+                if(mousePressed)
+                {       
+                    if(key != 'p')
+                    {
+                        line(width,333,i,333 + heartbeat.left.get(i)*333);
+                    }
+                }
             }
-        }
          
     }
 
@@ -277,11 +284,23 @@ public class UI extends PApplet {
         }
     }
 
+    public void loadrandomInfo()
+    {
+        Table table = loadTable("randomtext.csv","header");
+        for(TableRow row: table.rows())
+        {
+            Random ran = new Random(row);
+            text.add(ran);
+        }
+    }
+
     // public void printData()
     // {
     //     for(CoBodyPart p: part)
     //     System.out.println(p);
     // }
+
+
     
      //DrawData
      public void drawData()
@@ -327,6 +346,54 @@ public class UI extends PApplet {
             noStroke();
             noTint();
             strokeWeight(1);
+        }
+    }
+
+    public void drawrandomInfo()
+    {
+        for(Random ran : text)
+        {
+            if(ran.getCx() == 931 && ran.getCy() == 307)
+            {
+                fill(255);
+                ellipse(ran.getCx(), ran.getCy(), 10,10);
+                textSize(5);
+                textAlign(LEFT);
+                text(ran.getInformation(),ran.getCx()+5,ran.getCy(), 50,50);
+                
+            }else if(ran.getCx() == 1110 && ran.getCy() == 307)
+            {
+                fill(255,0,0);
+                ellipse(ran.getCx(), ran.getCy(), 5,5);
+                    
+            }else if(ran.getCx() == 931 && ran.getCy() == 378)
+            {
+                fill(0,255,0);
+                ellipse(ran.getCx(), ran.getCy(), 5,5);
+               
+            }else if(ran.getCx() == 1110 && ran.getCy() == 378)
+            {
+                fill(0,0,255);
+                ellipse(ran.getCx(), ran.getCy(), 5,5);
+            }
+            else if(ran.getCx() == 931 && ran.getCy() == 449)
+            {
+                fill(191,0,255);
+                ellipse(ran.getCx(), ran.getCy(), 5,5);
+
+            }else if(ran.getCx() == 1110 && ran.getCy() == 449)
+            {
+                fill(0,255,191);
+                ellipse(ran.getCx(), ran.getCy(), 5,5);
+                
+            }
+            else if(ran.getCx() == 931 && ran.getCy() == 520)
+            {
+                fill(255,255,0);
+                ellipse(ran.getCx(), ran.getCy(), 5,5);
+            }
+            noFill();
+            noStroke();     
         }
     }
 
