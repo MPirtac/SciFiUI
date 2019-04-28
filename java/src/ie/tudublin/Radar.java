@@ -5,7 +5,6 @@ import processing.core.PVector;
 
 public class Radar extends UIElement {
     private float d;
-    private float r;
     private float rotation;
     private PVector position;
 
@@ -13,19 +12,23 @@ public class Radar extends UIElement {
     {
         super(x,y,ui);
         this.d = d;
-        r =  (d/2) - 30;
         position = new PVector(x,y);
     }
 
     public void render()
     {
-        ui.stroke(0,0,255);
+        ui.stroke(0,0,255,100);
         ui.noFill();
         ui.translate(position.x, position.y);
         ui.ellipse(x, y, d, d);
-        ui.stroke(255,0,0);
+        ui.ellipse(x, y, d-40, d-40);
+        ui.ellipse(x, y, d-80, d-80);
+        ui.ellipse(x, y, d-120, d-120);
+        ui.ellipse(x, y, d-160, d-160);
+        ui.stroke(0);
         ui.rotate(rotation);
-        ui.line(x , y , x - r  , y - r);
+        ui.fill(0, 204, 255,100);
+        ui.arc(x, y,d,d, 0, ui.PI/2);
         ui.stroke(0);
     }
 
