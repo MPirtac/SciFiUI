@@ -403,14 +403,34 @@ public class UI extends PApplet {
                 textAlign(LEFT);
                 text(ran.getInformation(),ran.getCx()+10,ran.getCy()-5, 120,70);
                 
-            }
-            else if(ran.getCx() == 931 && ran.getCy() == 520)
+            }else if(ran.getCx() == 931 && ran.getCy() == 520)
             {
                 fill(255,255,0);
                 ellipse(ran.getCx(), ran.getCy(), 12,12);
                 textSize(5);
                 textAlign(LEFT);
                 text(ran.getInformation(),ran.getCx()+10,ran.getCy()-5, 120,70);
+            }else if(ran.getCx() == 720 && ran.getCy() == 617)
+            {
+                fill(178,102,255);
+                ellipse(ran.getCx(), ran.getCy(), 10,10);
+                textSize(5);
+                textAlign(LEFT);
+                text(ran.getInformation(),ran.getCx()+10,ran.getCy()-5, 100,40);
+            }else if(ran.getCx() == 720 && ran.getCy() == 652)
+            {
+                fill(102,255,178);;
+                ellipse(ran.getCx(), ran.getCy(), 10,10);
+                textSize(5);
+                textAlign(LEFT);
+                text(ran.getInformation(),ran.getCx()+10,ran.getCy()-5, 100,40);
+            }else if(ran.getCx() == 720 && ran.getCy() == 687)
+            {
+                fill(255,102,255);
+                ellipse(ran.getCx(), ran.getCy(), 10,10);
+                textSize(5);
+                textAlign(LEFT);
+                text(ran.getInformation(),ran.getCx()+10,ran.getCy()-5, 100,40);
             }
             noFill();
             noStroke();     
