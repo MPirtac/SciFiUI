@@ -108,7 +108,7 @@ public class UI extends PApplet {
 
         for(int i = 0; i < 5; i++)
         {
-            Triangles trig = new Triangles(200 - (i*20), 690, 240+(i*5), 690, 220-(i*3), 675-(i*20), 255, 255, 255,this);
+            Triangles trig = new Triangles(200 - (i*20), 690, 240+(i*5), 690, 220-(i*3), 675-(i*20), 255, 255, 255, 20+(i*20),this);
             a.add(trig);
         }
 
