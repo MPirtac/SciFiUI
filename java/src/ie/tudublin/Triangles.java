@@ -2,7 +2,7 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Triangles
+public class Triangles extends UIElement
 {
     private float x1;
     private float x2;
@@ -12,10 +12,10 @@ public class Triangles
     private float y3;
     private float r,g,b;
     private int text;
-    PApplet ui;
     
-    public Triangles(float x1, float y1, float x2, float y2, float x3, float y3, float r, float g, float b, int text, PApplet ui)
+    public Triangles(float x1, float y1, float x2, float y2, float x3, float y3, float r, float g, float b, int text, float x, float y, PApplet ui)
     {
+        super(x, y, ui);
         this.x1 = x1;
         this.x2 = x2;
         this.x3 = x3;
@@ -41,8 +41,12 @@ public class Triangles
         ui.strokeWeight(1);
         ui.line(x3-25,y3+5,x3-5,y3+5);
         ui.fill(255);
+        ui.textAlign(PApplet.LEFT);
         ui.textSize(10);
-        ui.text(text + "%",x3-45,y3+5);
+        ui.text(text + "%",x3-55,y3+10);
         ui.strokeWeight(1);
+        ui.textSize(14);
+        ui.textAlign(PApplet.LEFT);
+        ui.text("Rehabilitation",x,y);
     }
 }

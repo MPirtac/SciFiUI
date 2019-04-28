@@ -21,7 +21,7 @@ public class Graph
     public void render()
     {  
         
-        ui.stroke(255);  
+        ui.stroke(100,100,100);  
         //The Grid
         gridLines();
 
@@ -50,6 +50,11 @@ public class Graph
         ui.stroke(255, 255, 0);
         lines(data7);
         ui.stroke(0);
+        ui.fill(255);
+        ui.textAlign(PApplet.LEFT);
+        ui.textSize(20);
+        ui.text("Medical Service", x,y-30);
+        
     }
     
     public void gridLines()

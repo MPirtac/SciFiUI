@@ -37,9 +37,13 @@ public class Ovals extends PApplet
         ui.stroke(r,g,b);
         ui.line(x-110,y,x-110,y-5);
         ui.fill(255);
-        ui.textAlign(LEFT);
+        ui.textAlign(PApplet.LEFT);
         ui.textSize(5);
         ui.text(text, x-140, y);
+        ui.fill(255);
+        ui.textAlign(PApplet.LEFT);
+        ui.textSize(14);
+        ui.text("State Of The Body", 1120 ,600);
     }
 
 }

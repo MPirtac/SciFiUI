@@ -102,13 +102,13 @@ public class UI extends PApplet {
         for(int j = 0; j < 6; j++)
         {
             float height = (float)random(-100); 
-            BarChart barChart = new BarChart((width - 1000) +(j*25), 690, 20, height, j+1, this);
+            BarChart barChart = new BarChart((width - 1000) +(j*25), 690, 20, height, j+1, 275, 575,this);
             r.add(barChart);
         }
 
         for(int i = 0; i < 5; i++)
         {
-            Triangles trig = new Triangles(200 - (i*20), 690, 240+(i*5), 690, 220-(i*3), 675-(i*20), 255, 255, 255, 20+(i*20),this);
+            Triangles trig = new Triangles(200 - (i*20), 690, 240+(i*5), 690, 220-(i*3), 675-(i*20), 255, 255, 255, 20+(i*20),145,580,this);
             a.add(trig);
         }
 
