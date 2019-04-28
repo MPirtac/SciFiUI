@@ -8,11 +8,11 @@ public class Ovals extends PApplet
     private float y;
     private float w;
     private float h;
-    //private float colour;
     private float r,g,b;
+    private String text;
     PApplet ui;
     
-    public Ovals(float x, float y, float w, float h, float r, float g, float b, PApplet ui)
+    public Ovals(float x, float y, float w, float h, float r, float g, float b, String text, PApplet ui)
     {
         this.x = x;
         this.y = y;
@@ -21,6 +21,7 @@ public class Ovals extends PApplet
         this.r = r;
         this.g = g;
         this.b = b;
+        this.text = text;
         this.ui = ui;
     }
 
@@ -30,6 +31,15 @@ public class Ovals extends PApplet
         //ui.noFill();
         ui.fill(r,g,b, 100);
         ui.ellipse(x, y, w, h);
+        ui.line(x-100,y,x-30,y);
+        ui.stroke(r,g,b);
+        ui.line(x-142,y,x-142,y-5);
+        ui.stroke(r,g,b);
+        ui.line(x-110,y,x-110,y-5);
+        ui.fill(255);
+        ui.textAlign(LEFT);
+        ui.textSize(5);
+        ui.text(text, x-140, y);
     }
 
 }

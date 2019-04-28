@@ -119,12 +119,12 @@ public class UI extends PApplet {
             float gap = 12.3f;
             if(i % 2 == 0)
             {
-                Ovals oval = new Ovals(width - 100, height - 20 - (i*gap), 120 , 20, 0, 127,160 , this);
+                Ovals oval = new Ovals(width - 100, height - 20 - (i*gap), 120 , 20, 0, 127,160, "Healthy",this);
                 o.add(oval);
             }
             else
             {
-                Ovals oval = new Ovals(width - 100, height - 20 - (i*gap), 120 , 20, 66,244,104 , this);
+                Ovals oval = new Ovals(width - 100, height - 20 - (i*gap), 120 , 20, 66,244,104, "Not Healthy",this);
                 o.add(oval);
 
             }
