@@ -130,11 +130,11 @@ public class UI extends PApplet {
             }
         }
 
-        PieChart piece1 = new PieChart(width - 400 + 2, height - 70 + 2, 90, 0, radians(100), 255, 102, 255,this);
+        PieChart piece1 = new PieChart(width - 400 + 37, height - 70 + 5, 90, 0, radians(100), 255, 102, 255, "3",925,682,this);
         p.add(piece1);
-        PieChart piece2 = new PieChart(width - 400 - 2, height - 70, 90, radians(120), radians(220), 178,102,255,this);
+        PieChart piece2 = new PieChart(width - 400 + 29, height - 70 + 2, 90, radians(120), radians(220), 178,102,255, "1", 878, 660, this);
         p.add(piece2);
-        PieChart piece3 = new PieChart(width- 400 + 1, height - 70 -3, 90, radians(240), radians(340), 102,255,178,this);
+        PieChart piece3 = new PieChart(width- 400 + 35, height - 70 -5, 90, radians(240), radians(340), 102,255,178, "2", 917, 627, this);
         p.add(piece3);
 
         //Body Image
@@ -413,24 +413,24 @@ public class UI extends PApplet {
             }else if(ran.getCx() == 720 && ran.getCy() == 617)
             {
                 fill(178,102,255);
-                ellipse(ran.getCx(), ran.getCy(), 10,10);
+                ellipse(ran.getCx()+15, ran.getCy(), 10,10);
                 textSize(5);
                 textAlign(LEFT);
-                text(ran.getInformation(),ran.getCx()+10,ran.getCy()-5, 100,40);
+                text(ran.getInformation(),ran.getCx()+30,ran.getCy()-5, 100,40);
             }else if(ran.getCx() == 720 && ran.getCy() == 652)
             {
                 fill(102,255,178);;
-                ellipse(ran.getCx(), ran.getCy(), 10,10);
+                ellipse(ran.getCx()+15, ran.getCy(), 10,10);
                 textSize(5);
                 textAlign(LEFT);
-                text(ran.getInformation(),ran.getCx()+10,ran.getCy()-5, 100,40);
+                text(ran.getInformation(),ran.getCx()+30,ran.getCy()-5, 100,40);
             }else if(ran.getCx() == 720 && ran.getCy() == 687)
             {
                 fill(255,102,255);
-                ellipse(ran.getCx(), ran.getCy(), 10,10);
+                ellipse(ran.getCx()+15, ran.getCy(), 10,10);
                 textSize(5);
                 textAlign(LEFT);
-                text(ran.getInformation(),ran.getCx()+10,ran.getCy()-5, 100,40);
+                text(ran.getInformation(),ran.getCx()+30,ran.getCy()-5, 100,40);
             }
             noFill();
             noStroke();     
