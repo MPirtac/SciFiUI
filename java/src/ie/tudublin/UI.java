@@ -232,6 +232,7 @@ public class UI extends PApplet {
             drawData();
         }
 
+        //draw random text
         drawrandomInfo();
 
         //Body Background
@@ -353,44 +354,63 @@ public class UI extends PApplet {
     {
         for(Random ran : text)
         {
+    
             if(ran.getCx() == 931 && ran.getCy() == 307)
             {
                 fill(255);
-                ellipse(ran.getCx(), ran.getCy(), 10,10);
+                ellipse(ran.getCx(), ran.getCy(), 12,12);
                 textSize(5);
                 textAlign(LEFT);
-                text(ran.getInformation(),ran.getCx()+5,ran.getCy(), 50,50);
+                text(ran.getInformation(),ran.getCx()+10,ran.getCy()-5, 120,70);
                 
             }else if(ran.getCx() == 1110 && ran.getCy() == 307)
             {
                 fill(255,0,0);
-                ellipse(ran.getCx(), ran.getCy(), 5,5);
+                ellipse(ran.getCx(), ran.getCy(), 12,12);
+                textSize(5);
+                textAlign(LEFT);
+                text(ran.getInformation(),ran.getCx()+10,ran.getCy()-5, 120,70);
                     
             }else if(ran.getCx() == 931 && ran.getCy() == 378)
             {
                 fill(0,255,0);
-                ellipse(ran.getCx(), ran.getCy(), 5,5);
+                ellipse(ran.getCx(), ran.getCy(), 12,12);
+                textSize(5);
+                textAlign(LEFT);
+                text(ran.getInformation(),ran.getCx()+10,ran.getCy()-5, 120,70);
                
             }else if(ran.getCx() == 1110 && ran.getCy() == 378)
             {
                 fill(0,0,255);
-                ellipse(ran.getCx(), ran.getCy(), 5,5);
+                ellipse(ran.getCx(), ran.getCy(), 12,12);
+                textSize(5);
+                textAlign(LEFT);
+                text(ran.getInformation(),ran.getCx()+10,ran.getCy()-5, 120,70);
             }
             else if(ran.getCx() == 931 && ran.getCy() == 449)
             {
                 fill(191,0,255);
-                ellipse(ran.getCx(), ran.getCy(), 5,5);
+                ellipse(ran.getCx(), ran.getCy(), 12,12);
+                textSize(5);
+                textAlign(LEFT);
+                text(ran.getInformation(),ran.getCx()+10,ran.getCy()-5, 120,70);
 
             }else if(ran.getCx() == 1110 && ran.getCy() == 449)
             {
                 fill(0,255,191);
-                ellipse(ran.getCx(), ran.getCy(), 5,5);
+                ellipse(ran.getCx(), ran.getCy(), 12,12);
+                textSize(5);
+                textAlign(LEFT);
+                text(ran.getInformation(),ran.getCx()+10,ran.getCy()-5, 120,70);
                 
             }
             else if(ran.getCx() == 931 && ran.getCy() == 520)
             {
                 fill(255,255,0);
-                ellipse(ran.getCx(), ran.getCy(), 5,5);
+                ellipse(ran.getCx(), ran.getCy(), 12,12);
+                textSize(5);
+                textAlign(LEFT);
+                text(ran.getInformation(),ran.getCx()+10,ran.getCy()-5, 120,70);
             }
             noFill();
             noStroke();     
