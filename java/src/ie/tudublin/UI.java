@@ -13,7 +13,6 @@ import processing.data.TableRow;
 public class UI extends PApplet {
     ArrayList<Circle> c = new ArrayList<Circle>();
     ArrayList<BarChart> r = new ArrayList<BarChart>();
-    // ArrayList<Triangles> t = new ArrayList<Triangles>();
     ArrayList<Triangles> a = new ArrayList<Triangles>();
     ArrayList<Ovals> o = new ArrayList<Ovals>();
     ArrayList<PieChart> p = new ArrayList<PieChart>();
@@ -256,19 +255,15 @@ public class UI extends PApplet {
         //     System.out.println("Left arrow key pressed");
         // }
 
-        // colorMode(HSB);
-        // for(int i = 0; i<ai.bufferSize(); i++)
-        // {
-        // if(click != -1)
-        // {
-        //   for(int i =0; i < songs[click].bufferSize();i++)
-        //  {
-        //      stroke(map(i,0,frame,0,255),255,255);
-        //      line(i+300,50,i,50 + ai.left.get(i)*50);
-        //  }
-        //      line(i+300,50,i,50 + songs[click].left.get(i)*50);
-        //  }
-        //  } 
+
+        for(int i = 0; i<ai.bufferSize(); i++)
+        {
+            if(key != 'p')
+            {
+                line(width,333,i,333 + heartbeat.left.get(i)*333);
+            }
+        }
+         
     }
 
     //Load Coordinates from the csv file 
@@ -358,7 +353,8 @@ public class UI extends PApplet {
         t = t + 0.11f;  
         s4 = s4 + (s1-s4)/200;
         }
-    
+
+    //To play heartbeat
     public void mousePressed()
     {
         if(mouseX > 588 && mouseX < 615 && mouseY>183 && mouseY<213)
@@ -366,7 +362,7 @@ public class UI extends PApplet {
             heartbeat.play();
         }
     }
-
+    //To stop the heartbeat 
     public void keyPressed()
     {
         if(key == 'p' && heartbeat.isPlaying() == true)
