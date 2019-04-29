@@ -11,8 +11,10 @@ import processing.data.Table;
 import processing.data.TableRow;
 
 public class UI extends PApplet {
-    ArrayList<Circle> c = new ArrayList<Circle>();
-    ArrayList<BarChart> r = new ArrayList<BarChart>();
+    ArrayList<UIElement> uiElement = new ArrayList<UIElement>();
+    // ArrayList<Circle> c = new ArrayList<Circle>();
+    // ArrayList<BarChart> r = new ArrayList<BarChart>();
+    //ArrayList<ArtificialID> id = new ArrayList<ArtificialID>();
     ArrayList<Triangles> a = new ArrayList<Triangles>();
     ArrayList<Ovals> o = new ArrayList<Ovals>();
     ArrayList<PieChart> p = new ArrayList<PieChart>();
@@ -23,9 +25,6 @@ public class UI extends PApplet {
     PImage img;
     // Parts of the body Images
     PImage p1, p2, p3, p4, p5;
-
-    // ArtificialID d;
-    ArrayList<ArtificialID> id = new ArrayList<ArtificialID>();
 
     // The Graph
     Graph g;
@@ -63,14 +62,14 @@ public class UI extends PApplet {
     public void setup() {
         for (int i = 0; i < 3; i++) {
             int text = (int) random(0, 100);
-            Circle circle = new Circle(520 + (i * 70), height - 50, 50, text, 1, this);
-            c.add(circle);
+            UIElement circle = new Circle(520 + (i * 70), height - 50, 50, text, 1, this);
+            uiElement.add(circle);
         }
 
         for (int j = 0; j < 6; j++) {
             float height = (float) random(-100);
-            BarChart barChart = new BarChart((width - 1000) + (j * 25), 690, 20, height, j + 1, 275, 575, this);
-            r.add(barChart);
+            UIElement barChart = new BarChart((width - 1000) + (j * 25), 690, 20, height, j + 1, 275, 575, this);
+            uiElement.add(barChart);
         }
 
         for (int i = 0; i < 5; i++) {
@@ -115,8 +114,8 @@ public class UI extends PApplet {
         // Artificial ID
         float x = 0;
         while (x < 360) {
-            ArtificialID c1 = new ArtificialID(sin(radians(x)), cos(radians(x)), this);
-            id.add(c1);
+            UIElement c1 = new ArtificialID(sin(radians(x)), cos(radians(x)), this);
+            uiElement.add(c1);
             x += 10;
         }
 
@@ -150,11 +149,11 @@ public class UI extends PApplet {
         background(0);
         image(img, width / 3, height / 10, 360, 500);
     
-        for (Circle circle : c) {
+        for (UIElement circle : uiElement) {
             circle.render();
         }
 
-        for (BarChart barChart : r) {
+        for (UIElement barChart : uiElement) {
             barChart.render();
         }
 
@@ -170,7 +169,7 @@ public class UI extends PApplet {
             pieces.render();
         }
 
-        for (ArtificialID c1 : id) {
+        for (UIElement c1 : uiElement) {
             c1.render();
         }
 
