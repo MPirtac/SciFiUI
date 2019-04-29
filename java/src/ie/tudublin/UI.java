@@ -1,7 +1,6 @@
 package ie.tudublin;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import ddf.minim.AudioInput;
 import ddf.minim.AudioPlayer;
@@ -187,7 +186,10 @@ public class UI extends PApplet {
         }
 
         // draw random text
-        drawrandomInfo();
+        if(key == 'm')
+        {
+            drawrandomInfo();
+        }
 
         // Body Background
         framework.render();
@@ -270,7 +272,7 @@ public class UI extends PApplet {
 
     public void drawrandomInfo() {
         for (Random ran : text) {
-
+            
             if (ran.getCx() == 931 && ran.getCy() == 307) {
                 fill(255);
                 ellipse(ran.getCx(), ran.getCy(), 12, 12);
@@ -341,6 +343,7 @@ public class UI extends PApplet {
             noFill();
             noStroke();
         }
+    
     }
     public float h;
     public float wave(float x) {
