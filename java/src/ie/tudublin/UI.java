@@ -213,6 +213,8 @@ public class UI extends PApplet {
                 }
             }
         }
+        
+        //location of the circle
         if(mouseX>55 && mouseX<217)
         {
             if(mouseY>322 && mouseY<473)
