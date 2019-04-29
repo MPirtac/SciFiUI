@@ -38,6 +38,9 @@ public class UI extends PApplet {
     // heart button
     Button heart;
 
+    //location 
+    Location l;
+
     // sine wave for the heart beat
     float s1 = 20.0f;
     float s2 = 1f;
@@ -52,7 +55,7 @@ public class UI extends PApplet {
     public static int sample = 64100;
     public static int resolution = 16;
     public static int frame = 1024;
-    AudioInput ai;
+    AudioInput ai;    
    
     public void settings() {
         // size(800, 800);
@@ -141,11 +144,14 @@ public class UI extends PApplet {
         // radar
         radar = new Radar(width - 1150, 400, 200,this);
 
+
+
         // Random Text
         loadrandomInfo();
     }
 
     public void draw() {
+       
         background(0);
         image(img, width / 3, height / 10, 360, 500);
     
@@ -197,7 +203,7 @@ public class UI extends PApplet {
         // heart button
         heart.render();
 
-        //println(mouseX, mouseY);
+        println(mouseX, mouseY);
 
         for (int i = 0; i < ai.bufferSize(); i++) {
             if (mousePressed) {
@@ -208,6 +214,10 @@ public class UI extends PApplet {
             }
         }
 
+                l = new Location(mouseX,mouseY,15,this);
+                l.render();
+    
+        
         radar.render();
         radar.updateRadar();
 
