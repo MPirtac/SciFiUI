@@ -26,7 +26,6 @@ public class Triangles extends UIElement
         this.g = g;
         this.b = b;
         this.text = text;
-        this.ui = ui;
     }
 
     public void render()

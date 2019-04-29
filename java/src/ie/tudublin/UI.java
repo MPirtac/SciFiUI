@@ -19,6 +19,7 @@ public class UI extends PApplet {
     ArrayList<PieChart> p = new ArrayList<PieChart>();
     ArrayList<CoBodyPart> part = new ArrayList<CoBodyPart>();
     ArrayList<Random> text = new ArrayList<Random>();
+
     // Body Image
     PImage img;
     // Parts of the body Images
@@ -26,10 +27,18 @@ public class UI extends PApplet {
 
     // ArtificialID d;
     ArrayList<ArtificialID> id = new ArrayList<ArtificialID>();
-    // ArrayList<Graph> g = new ArrayList<Graph>();
+
+    // The Graph
     Graph g;
 
+    //Arcs around the body
     BodyBackground framework;
+
+    // Radar
+    Radar radar;
+
+    // heart button
+    Button heart;
 
     // sine wave for the heart beat
     float s1 = 20.0f;
@@ -46,53 +55,13 @@ public class UI extends PApplet {
     public static int resolution = 16;
     public static int frame = 1024;
     AudioInput ai;
-    // heart button
-    Button heart;
-
-    // Radar
-    Radar radar;
-    // Random text1,text2,text3,text4,text5,text6,text7;
-    // Triangles a1;
-    // Triangles a2;
-    // Triangles a3;
-    // Triangles a4;
-    // Triangles a5;
-    // Triangles a6;
-    // Triangles a7;
-    // MovingCircle mc;
-    // Circle a;
-    // x + something will move to right | width
-    // x - something will move to left
-    // y - something will move up | height
-    // y + something will move down
-
-    // boolean[] keys = new boolean[1024];
-
-    // public void keyPressed()
-    // {
-    // keys[keyCode] = true;
-    // }
-
-    // public void keyReleased()
-    // {
-    // keys[keyCode] = true;
-    // }
-
-    // public boolean checkKey(int c)
-    // {
-    // return keys[c] || keys [Character.toUpperCase(c)];
-    // }
-
+   
     public void settings() {
         // size(800, 800);
-        // Use fullscreen instead of size to make your interface fullscreen
         fullScreen();
-        // println(dist(10, 10, 11, 11));
     }
 
     public void setup() {
-        // mc = new MovingCircle(this, width / 2, height / 2, 50);
-        // a = new Circle(width/2, height - 50, 60, this);
         for (int i = 0; i < 3; i++) {
             int text = (int) random(0, 100);
             Circle circle = new Circle(520 + (i * 70), height - 50, 50, text, 1, this);
@@ -159,12 +128,12 @@ public class UI extends PApplet {
         loadData();
 
         // Body Background
-        // framework = new BodyBackground(450, 280, this);
         framework = new BodyBackground(598, 320, PI + 1.2f, PI / 6, PI + 1.6f, PI / 4, PI + 0.7f, PI / 8, this);
 
         // heart beat
         minim = new Minim(this);
         heartbeat = minim.loadFile("heartbeat.mp3");
+
         // heartbeat.play();
         ai = minim.getLineIn(minim.MONO, frame, sample, resolution);
 
@@ -181,10 +150,7 @@ public class UI extends PApplet {
     public void draw() {
         background(0);
         image(img, width / 3, height / 10, 360, 500);
-        // image(img,mouseX,mouseY, 360,500);
-        // b.render();
-        // mc.update();
-        // mc.render();
+    
         for (Circle circle : c) {
             circle.render();
         }
@@ -211,8 +177,6 @@ public class UI extends PApplet {
 
         g.render();
 
-        // print data
-        // printData();
 
         for (int i = 0; i < part.size(); i++) {
             part.get(i).hoverover(mouseX, mouseY);
@@ -231,27 +195,8 @@ public class UI extends PApplet {
         waves();
         // heart button
         heart.render();
-        println(mouseX, mouseY);
-        // radar
-        // radar.render();
-        // radar.updateRadar();
-        // outline.gridLines();
-        // d.render();
-        // float x = random(width);
-        // float y = random(height);
 
-        // o1.render();
-
-        // a5.render();
-        // a4.render();
-        // a3.render();
-        // a2.render();
-        // a1.render();
-
-        // if (checkKey(LEFT))
-        // {
-        // System.out.println("Left arrow key pressed");
-        // }
+        //println(mouseX, mouseY);
 
         for (int i = 0; i < ai.bufferSize(); i++) {
             if (mousePressed) {
@@ -283,12 +228,6 @@ public class UI extends PApplet {
             text.add(ran);
         }
     }
-
-    // public void printData()
-    // {
-    // for(CoBodyPart p: part)
-    // System.out.println(p);
-    // }
 
     // DrawData
     public void drawData() {

@@ -31,29 +31,6 @@ public class BodyBackground extends UIElement
 
     public void render()
     {
-            
-            //circles
-            // ui.strokeWeight(2);
-            // ui.stroke(179, 255, 218);
-            // ui.noFill();
-            // ui.ellipse(x,y, size2,size2);
-            // ui.noStroke();
-
-            // ui.strokeWeight(2);
-            // ui.stroke(102, 102, 255);
-            // ui.noFill();
-            // ui.ellipse(x,y,size3,size3);
-
-            // ui.strokeWeight(4);
-            // ui.stroke(77, 255, 166);
-            // ui.noFill();
-            // ui.ellipse(x,y,size5,size5);
-
-            // ui.strokeWeight(4);
-            // ui.stroke(77, 255, 166);
-            // ui.noFill();
-            // ui.ellipse(x,y,size7,size7);
-
             //arcs
             ui.strokeWeight(5);
             ui.stroke(0,0,153); 

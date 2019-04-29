@@ -74,15 +74,7 @@ public class Graph extends UIElement
     }
 
     public void lines(int[] data)
-    {
-       
-        /*for(int i = 0; i < data.length; i++)
-        {
-            // data[i] = (int)ui.random(0,50);
-
-        data[i] = 
-        }*/
-        
+    { 
         float cox = x;
         int gap = 35;
         // ui.stroke(255);
