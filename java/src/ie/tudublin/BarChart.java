@@ -2,27 +2,22 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class BarChart
+public class BarChart extends UIElement
 {
-    private float x;
-    private float y;
     private float width;
     private float height;
     private int value;
     private float tx;
     private float ty; 
-    private PApplet ui;
 
     public BarChart(float x, float y,float width, float height, int value, float tx, float ty,PApplet ui)
     {
-        this.x = x;
-        this.y = y;
+        super(x,y,ui);
         this.width = width;
         this.height = height;
         this.value = value;
         this.tx = tx;
         this.ty = ty;
-        this.ui = ui;
     }
 
     public void render()

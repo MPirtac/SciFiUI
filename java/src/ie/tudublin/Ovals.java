@@ -2,27 +2,22 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Ovals extends PApplet
+public class Ovals extends UIElement
 {
-    private float x;
-    private float y;
     private float w;
     private float h;
     private float r,g,b;
     private String text;
-    PApplet ui;
     
     public Ovals(float x, float y, float w, float h, float r, float g, float b, String text, PApplet ui)
     {
-        this.x = x;
-        this.y = y;
+        super(x,y,ui);
         this.w = w;
         this.h = h;
         this.r = r;
         this.g = g;
         this.b = b;
         this.text = text;
-        this.ui = ui;
     }
 
     public void render()

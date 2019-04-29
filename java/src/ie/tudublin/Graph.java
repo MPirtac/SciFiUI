@@ -2,20 +2,16 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Graph
+public class Graph extends UIElement
 {
-    private float x;
-    private float y;
     private float distance;
-    PApplet ui;
+  
     
 
     public Graph(float x, float y,float distance, PApplet ui)
     {
-        this.x = x;
-        this.y = y;
+        super(x,y,ui);
         this.distance = distance;
-        this.ui = ui;
     }
 
     public void render()

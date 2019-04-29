@@ -8,7 +8,7 @@ public class Radar extends UIElement {
     private float rotation;
     private PVector position;
 
-    public Radar(float x, float y, float d, PApplet ui)
+    public Radar(float x, float y, float d,PApplet ui)
     {
         super(x,y,ui);
         this.d = d;

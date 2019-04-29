@@ -172,7 +172,7 @@ public class UI extends PApplet {
         heart = new Button(588, 183, 27, 30, this);
 
         // radar
-        radar = new Radar(width - 1150, 400, 200, this);
+        radar = new Radar(width - 1150, 400, 200,this);
 
         // Random Text
         loadrandomInfo();
@@ -318,6 +318,7 @@ public class UI extends PApplet {
                 }
 
                 fill(255);
+                textSize(10);
                 textAlign(CENTER);
                 text(fragment.getName(), fragment.getCoordX() - 200, fragment.getCoordY());
             }
