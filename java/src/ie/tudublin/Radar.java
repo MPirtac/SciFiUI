@@ -30,6 +30,7 @@ public class Radar extends UIElement {
         ui.fill(0, 204, 255,100);
         ui.arc(x, y,d,d, 0, ui.PI/2);
         ui.stroke(0);
+        ui.noFill();
     }
 
     public void updateRadar()
