@@ -5,7 +5,8 @@ Name: Mariana Pirtac
 Student Number: C17378303
 
 # Description of the assignment
-
+My project is going to represent a ui medical interface. The project is going to give an analysis of the human body. There are different graphs displaying different information about the state of the human body. Also, there is a hover function which when you use it you can see the state of the organs. If an organ is healthy it will display blue if it is not healthy it will be displayed red.
+There is a function that lets you hear the heartbeat of the human body. Furthermore, you will be able to see the location of the human body.
 # Instructions
 
 # How it works

@@ -29,7 +29,7 @@ public class CoBodyPart extends PApplet
     public void hoverover(float cx, float cy)
     {
         float d = ui.dist(cx,cy,CoordX,CoordY);
-        if(d< 10/2)
+        if(d < 10/2)
         {
             hover = true;
         }else{
