@@ -90,25 +90,10 @@ public void render()
 }
 ```
 
-This is an image using a relative URL:
+Youtube
 
-![An image](images/p8.png)
-
-This is an image using an absolute URL:
-
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
-
-This is a youtube video:
+This is my youtube video:
+[![YouTube](images/YouTube.PNG)](https://www.youtube.com/watch?v=lPUuOwKOB_8)
 
 
-[![YouTube](http://img.youtube.com/vi/PUuOwKOB_8/0.jpg)](https://www.youtube.com/watch?v=lPUuOwKOB_8)
-
-This is a table:
-
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
 
