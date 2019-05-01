@@ -21,6 +21,8 @@ There is one supers class class called UIEllements and then there are multiple c
 
 Each of those classes are drawing various shapes. The Circle.java class draws 3 cercles and 2 moving arcs around each circle. I used to pushMatrix and popMatrix to make the arcs rotate. I also used the pushMatrix and popMatrix in the ArtificialID class. The pushMAtrix and popMatrix is used to draw circles made up of dots which represent the artificial ID of a person. 
 
+To draw the graph. I drew the gridlines first and then the lines. I used the map function to map the height of the lines. Underneath the graph there will be random text which will represent the information displayed by each line. The text is stored in a csv file. The code for loading the data and dispalying the text is strored in the Ui class. The text will not be visible at all the times. In order for the text to appprear the user should press on 'm'. I did this using a if statement. To use the text in ui I had to use the getters and setters. In the same csv file I stored the information for the pie chart. That text gets displayed in the same way. The pie chart was drawn in a separate class mainly using arcs. 
+
 
 
 # What I am most proud of in the assignment
