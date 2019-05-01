@@ -58,7 +58,7 @@ public class UI extends PApplet {
     AudioInput ai;    
    
     public void settings() {
-        // size(800, 800);
+
         fullScreen();
     }
 
@@ -81,7 +81,7 @@ public class UI extends PApplet {
             a.add(trig);
         }
 
-        // o1 = new Ovals(width - 100, height - 20, 130, 15, this);
+        
         for (int i = 0; i < 7; i++) {
             float gap = 12.3f;
             if (i % 2 == 0) {
@@ -202,8 +202,6 @@ public class UI extends PApplet {
         waves();
         // heart button
         heart.render();
-
-        println(mouseX, mouseY);
 
         for (int i = 0; i < ai.bufferSize(); i++) {
             if (mousePressed) {
