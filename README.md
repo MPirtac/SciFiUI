@@ -19,7 +19,9 @@ For this project I used 16 class to create the final UI medical interface.
 
 There is one supers class class called UIEllements and then there are multiple classes(ArtificialID.java, Barchart.java, BodyBackground.java, Button.java, Circle.java, Graph.java, Location.java, Ovals.java, Radar.java,Trinagles.java) which inherit from the super class.
 
-Each of those classes are drawing various shapes. The Circle.java class draws 3 cercles and 2 moving arcs around each circle. I used to pushMatrix and popMatrix to make the arcs rotate. 
+Each of those classes are drawing various shapes. The Circle.java class draws 3 cercles and 2 moving arcs around each circle. I used to pushMatrix and popMatrix to make the arcs rotate. I also used the pushMatrix and popMatrix in the ArtificialID class. The pushMAtrix and popMatrix is used to draw circles made up of dots which represent the artificial ID of a person. 
+
+
 
 # What I am most proud of in the assignment
 
