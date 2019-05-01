@@ -42,57 +42,10 @@ What I am most proud of is the fact taht I was able to successfully finish this 
 
 I think that personally I was able to learn a lot from doing this project, especially about the concepts of oop. Also, I learned a lot of new processing libraries. Furthermore, I learned how to implement various things differently. I think that doing a project like this has benefited me a lot. I strongly believe that experiencing a project like this will help me in the future. Also, because I had to use git over the entire project I was able to become more comfortable using git and I finally understand the advantages of git.
 
+# Youtube
 
-# Markdown Tutorial
+### This is my youtube video:
 
-This is *emphasis*
-
-This is a bulleted list
-
-- Item
-- Item
-
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
-
-This is code:
-
-```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-So is this without specifying the language:
-
-```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-Youtube
-
-This is my youtube video:
 [![YouTube](images/YouTube.PNG)](https://www.youtube.com/watch?v=lPUuOwKOB_8)
 
 
